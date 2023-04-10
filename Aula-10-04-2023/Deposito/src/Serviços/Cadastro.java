@@ -14,8 +14,8 @@ public class Cadastro {
 		JOptionPane.showMessageDialog(null, "CADASTRO DA FURADEIRA");
 		objeto.setCodigo(Integer.parseInt(JOptionPane.showInputDialog("Digite o código do equipamento: ")));
 		objeto.setMarca(JOptionPane.showInputDialog("Digite a marca do equipamento: "));
-		objeto.setPrecoDeCompra(Integer.parseInt(JOptionPane.showInputDialog("Digite o preço de compra do equipamento: ")));
-		objeto.setPrecoDeVenda(Integer.parseInt(JOptionPane.showInputDialog("Digite o valor de venda do equipamento: ")));
+		objeto.setPrecoDeCompra(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra do equipamento: ")));
+		objeto.setPrecoDeVenda(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de venda do equipamento: ")));
 		objeto.setModeloFuradeira(JOptionPane.showInputDialog("Digite a modelo do equipamento: "));
 
 	}
@@ -37,8 +37,8 @@ public void cadastrarMakita(Makita objeto) {
 	    JOptionPane.showMessageDialog(null, "CADASTRO DO EQUIPAMENTO MAKITA");
 		objeto.setCodigo(Integer.parseInt(JOptionPane.showInputDialog("Digite o código do equipamento: ")));
 		objeto.setMarca(JOptionPane.showInputDialog("Digite a marca do equipamento: "));
-		objeto.setPrecoDeCompra(Integer.parseInt(JOptionPane.showInputDialog("Digite o preço de compra do equipamento: ")));
-		objeto.setPrecoDeVenda(Integer.parseInt(JOptionPane.showInputDialog("Digite o valor de venda do equipamento: ")));
+		objeto.setPrecoDeCompra(Double.parseDouble(JOptionPane.showInputDialog("Digite o preço de compra do equipamento: ")));
+		objeto.setPrecoDeVenda(Double.parseDouble(JOptionPane.showInputDialog("Digite o valor de venda do equipamento: ")));
 		objeto.setModeloMakita(JOptionPane.showInputDialog("Digite a modelo do equipamento: "));
 
 	}
