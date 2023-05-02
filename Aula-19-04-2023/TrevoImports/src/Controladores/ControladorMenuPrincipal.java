@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
+import Telas.TelaAtendente;
 import Telas.TelaGerente;
 
 public class ControladorMenuPrincipal implements ActionListener {
@@ -13,6 +14,7 @@ public class ControladorMenuPrincipal implements ActionListener {
 	TextField textoRecebido;
 	JFrame frameRecebido;
 	TelaGerente telaGerente = new TelaGerente();
+	TelaAtendente telaAtendente = new TelaAtendente();
 	
 	public ControladorMenuPrincipal(TextField textField,JFrame frame) {
 		
@@ -31,13 +33,15 @@ public class ControladorMenuPrincipal implements ActionListener {
 			
 		switch (textoRecebido.getText()) {
 		case "1":
-			telaGerente.TelaDoGerente();
+			telaGerente.TelaDoGerente(frameRecebido);
 			frameRecebido.setVisible(false);
 			
 			break;
 			
 		case "2":
-			System.out.println("acionar tela de cadastro do Atendente");
+			
+			telaAtendente.TelaAtendentee(frameRecebido);
+			frameRecebido.setVisible(false);
 			break;
 		 }
 		

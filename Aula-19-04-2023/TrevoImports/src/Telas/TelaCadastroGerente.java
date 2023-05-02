@@ -1,5 +1,6 @@
 package Telas;
 
+import java.awt.GridLayout;
 import java.awt.TextField;
 
 import javax.swing.JButton;
@@ -17,11 +18,14 @@ public class TelaCadastroGerente {
 		String opcao02 = "Cpf";
 		String opcao03 = "Gerência";
 		
+		GridLayout grid = new GridLayout (0,1);
+		
 		JFrame  frameCadastroGerente = new JFrame();
 		frameCadastroGerente.setSize(300,300);
-		frameCadastroGerente.setTitle("Menu Principal ");
+		frameCadastroGerente.setTitle("Cadastro Gerente ");
 		
 		JPanel painelCadastroGerente = new JPanel();
+		painelCadastroGerente.setLayout(grid);
 		
 		JLabel TextoOpcao1 = new JLabel(opcao01);
 		painelCadastroGerente.add(TextoOpcao1);

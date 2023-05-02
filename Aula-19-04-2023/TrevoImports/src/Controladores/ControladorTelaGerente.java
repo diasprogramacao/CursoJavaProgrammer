@@ -11,13 +11,15 @@ import Telas.TelaCadastroGerente;
  public class ControladorTelaGerente implements ActionListener {
 
 	 TextField respostaRecebida;
-	 JFrame frameRecebido;
+	 JFrame frameRecebidoTelaGerente;
+	 JFrame frameTelaMenuPrincipal;
 	 
 	 TelaCadastroGerente telaCadastroGerente = new TelaCadastroGerente();
 	 
-	 public ControladorTelaGerente(TextField recebido, JFrame frame) {
+	 public ControladorTelaGerente(TextField recebido, JFrame frameTelaGerente , JFrame frameTelaPrincipal) {
 		 this.respostaRecebida = recebido;
-		 this.frameRecebido = frame;
+		 this.frameRecebidoTelaGerente = frameTelaGerente;
+		 this.frameTelaMenuPrincipal= frameTelaPrincipal;
 		 
 	 }
 	 
@@ -30,11 +32,12 @@ import Telas.TelaCadastroGerente;
 			switch(recebido) { 
 		case "1": ;
 		telaCadastroGerente.CadastroGerente();
-		frameRecebido.setVisible(false);
+		frameRecebidoTelaGerente.setVisible(false);
 		
 			break;
 		case "2":
-			System.out.println("Sair");
+			frameRecebidoTelaGerente.setVisible(false);
+			frameTelaMenuPrincipal.setVisible(true);
 			}
 			
 		} else {
