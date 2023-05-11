@@ -48,7 +48,7 @@ public class ControladorTelaIdentificarConvidado implements ActionListener {
 		
 		if (ConvidadoIdentificado != null) {
 					
-			telaAlterarConvidado.AlterarConvidado(ConvidadoIdentificado);
+			telaAlterarConvidado.AlterarConvidado(ConvidadoIdentificado,frameMenuPrincipal,RepositorioRecebido);
 			frameTelaIdentificarConvidado.setVisible(false);
 			
 		}

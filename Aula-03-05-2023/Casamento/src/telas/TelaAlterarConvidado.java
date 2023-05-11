@@ -23,7 +23,7 @@ public class TelaAlterarConvidado {
 	
 	Convidado convidadoIdentificado = convidadoIdentificadoRecebido;
 	
-	public void AlterarConvidado(Convidado convidado) {
+	public void AlterarConvidado(Convidado convidado,JFrame JframeMenuPrincipal,RepositorioConvidado repositorioConvidado) {
 		
 		 String campo01 = "Nome"; 
 		 String campo02 = "Convite";
@@ -33,54 +33,55 @@ public class TelaAlterarConvidado {
 		 
 		 convidadoRecebido = convidado;
 		 
-		 JFrame frameTelaCadastroConvidado = new JFrame();
-		 frameTelaCadastroConvidado.setTitle("Cadastro Convidado");
-		 frameTelaCadastroConvidado.setSize(400,400);
+		 JFrame frameTelaAlterarConvidado = new JFrame();
+		 frameTelaAlterarConvidado.setTitle("Cadastro Convidado");
+		 frameTelaAlterarConvidado.setSize(400,400);
 		 
-		 JPanel painelTelaCadastroConvidado = new JPanel();
+		 JPanel painelTelaAlterarConvidado = new JPanel();
 		 
 		 GridLayout grid = new GridLayout(0,1);
-		 painelTelaCadastroConvidado.setLayout(grid);
+		 painelTelaAlterarConvidado.setLayout(grid);
 		 
 		 JLabel nome = new JLabel(campo01);
-		 painelTelaCadastroConvidado.add(nome);
+		 painelTelaAlterarConvidado.add(nome);
 		 JTextField  respostaCampo01 = new JTextField(10);
 		 respostaCampo01.setText(convidadoRecebido.getNome());
-		 painelTelaCadastroConvidado.add(respostaCampo01);
+		 painelTelaAlterarConvidado.add(respostaCampo01);
 		 
 		 JLabel cpf = new JLabel(campo05);
-		 painelTelaCadastroConvidado.add(cpf);
+		 painelTelaAlterarConvidado.add(cpf);
 		 JTextField  respostaCampo02 = new JTextField(10);
 		 respostaCampo02.setText(convidadoRecebido.getCpf());
-		 painelTelaCadastroConvidado.add(respostaCampo02);
+		 painelTelaAlterarConvidado.add(respostaCampo02);
 		 
 		 JLabel convite = new JLabel(campo02);
-		 painelTelaCadastroConvidado.add(convite);
+		 painelTelaAlterarConvidado.add(convite);
 		 JTextField  respostaCampo03 = new JTextField(10);
 		 respostaCampo03.setText(convidadoRecebido.getConvite());
-		 painelTelaCadastroConvidado.add(respostaCampo03);
+		 painelTelaAlterarConvidado.add(respostaCampo03);
 		 
 		 JLabel endereco = new JLabel(campo03);
-		 painelTelaCadastroConvidado.add(endereco);
+		 painelTelaAlterarConvidado.add(endereco);
 		 JTextField  respostaCampo04 = new JTextField(10);
 		 respostaCampo04.setText(convidadoRecebido.getEndereco());
-		 painelTelaCadastroConvidado.add(respostaCampo04);
+		 painelTelaAlterarConvidado.add(respostaCampo04);
 		 
 		 JLabel profissao = new JLabel(campo04);
-		 painelTelaCadastroConvidado.add(profissao);
+		 painelTelaAlterarConvidado.add(profissao);
 		 JTextField  respostaCampo05 = new JTextField(10);
 		 respostaCampo05.setText(convidadoRecebido.getProfissao());
-		 painelTelaCadastroConvidado.add(respostaCampo05);
+		 painelTelaAlterarConvidado.add(respostaCampo05);
 		 
-		 JButton botaoAlterar = new JButton();
-		 painelTelaCadastroConvidado.add(botaoAlterar);
+		 JButton botaoAlterar = new JButton("Alterar");
+		 painelTelaAlterarConvidado.add(botaoAlterar);
 		 JButton botaoVoltar  = new JButton();
-		 painelTelaCadastroConvidado.add(botaoVoltar);
+		 painelTelaAlterarConvidado.add(botaoVoltar);
 		 
-		 frameTelaCadastroConvidado.add(painelTelaCadastroConvidado);
-		 frameTelaCadastroConvidado.setVisible(true);
+		 frameTelaAlterarConvidado.add(painelTelaAlterarConvidado);
+		 frameTelaAlterarConvidado.setVisible(true);
 		
-		 ControladorAlterarConvidado ControladorAlterarConvidado =  new ControladorAlterarConvidado();
+		 ControladorAlterarConvidado ControladorAlterarConvidado =  new ControladorAlterarConvidado(frameTelaAlterarConvidado,JframeMenuPrincipal,convidado,repositorioConvidado,respostaCampo01,respostaCampo02,
+				 respostaCampo03,respostaCampo04,respostaCampo05);
 		 
 		 botaoAlterar.addActionListener(ControladorAlterarConvidado);
 		 botaoVoltar.addActionListener(ControladorAlterarConvidado);

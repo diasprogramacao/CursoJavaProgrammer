@@ -14,5 +14,6 @@ public interface InterfaceConvidado {
 	
 	public boolean deletarConvidado(Convidado convidado);
 	
+	public void alterarConvidado (Convidado convidadoAntigo,Convidado convidadoNovo);
 	
 }
