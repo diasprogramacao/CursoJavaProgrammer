@@ -3,15 +3,23 @@ package entidades;
 public class Convidado {
 	
 	private String  Nome;
+	private String  cpf;
 	private String  Convite;
 	private String  Endereco;
 	private String  Profissao;
+	
 	
 	public String getNome() {
 		return Nome;
 	}
 	public void setNome(String nome) {
 		Nome = nome;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getConvite() {
 		return Convite;
@@ -31,6 +39,7 @@ public class Convidado {
 	public void setProfissao(String profissao) {
 		Profissao = profissao;
 	}
+	
 	
 	
 	

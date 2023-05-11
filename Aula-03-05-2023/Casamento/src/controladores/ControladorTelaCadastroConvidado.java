@@ -15,15 +15,17 @@ public class ControladorTelaCadastroConvidado implements ActionListener {
 	JFrame JframeMenuPrincipal;
 	JFrame frameTelaCadastroConvidado;
 	JTextField nome;
+	JTextField cpf;
 	JTextField convite;
 	JTextField endereco;
 	JTextField profissao;
 
 	
-	public ControladorTelaCadastroConvidado(RepositorioConvidado repositorio,JFrame frameTelaMenuPrincipal, JFrame frameTelaCadastroConvidado, JTextField nome, JTextField convite,
+	public ControladorTelaCadastroConvidado(RepositorioConvidado repositorio,JFrame frameTelaMenuPrincipal, JFrame frameTelaCadastroConvidado, JTextField nome,JTextField cpf, JTextField convite,
 			JTextField endereco, JTextField profissao) {
 		this.frameTelaCadastroConvidado = frameTelaCadastroConvidado;
 		this.nome = nome;
+		this.cpf = cpf;
 		this.convite = convite;
 		this.endereco = endereco;
 		this.profissao = profissao;
@@ -47,6 +49,7 @@ public class ControladorTelaCadastroConvidado implements ActionListener {
 		
 		Convidado convidado = new Convidado();
 		convidado.setNome(nome.getText());
+		convidado.setCpf(cpf.getText());
 		convidado.setConvite(convite.getText());
 		convidado.setEndereco(endereco.getText());
 		convidado.setProfissao(profissao.getText());

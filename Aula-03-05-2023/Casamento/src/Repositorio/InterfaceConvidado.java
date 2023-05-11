@@ -10,5 +10,9 @@ public interface InterfaceConvidado {
 	
 	public List<Convidado> retornaLista();
 	
-
+	public Convidado BuscarConvidado(String cpf);
+	
+	public boolean deletarConvidado(Convidado convidado);
+	
+	
 }
