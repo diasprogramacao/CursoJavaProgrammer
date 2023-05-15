@@ -1,5 +1,6 @@
 package principal;
 
+import persistencia.FabricaConexao;
 import telas.MenuPrincipal;
 
 public class Principal {
@@ -8,6 +9,13 @@ public class Principal {
 		
 		MenuPrincipal menuPrincipal = new MenuPrincipal();
 		menuPrincipal.TelaMenuPrincipal();
+		
+		//FabricaConexao fabrica = new FabricaConexao();
+		//fabrica.criarConexao();
+		
+		
+		
 	}
+	
 
 }
