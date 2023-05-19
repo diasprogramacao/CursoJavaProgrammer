@@ -22,7 +22,7 @@ public class TelaIdentificarAlterarConvidado {
 			
 			int quantidadeLinhas = listaConvidado.size();
 			
-			String [][] tabelaString = new String [quantidadeLinhas][5];
+			String [][] tabelaString = new String [quantidadeLinhas][6];
 			
 			int posicaoLinha = 0;
 			int posicaoColuna = 0;
@@ -38,6 +38,8 @@ public class TelaIdentificarAlterarConvidado {
 				tabelaString[posicaoLinha][posicaoColuna] = convidado.getEndereco();
 				posicaoColuna++;
 				tabelaString[posicaoLinha][posicaoColuna] = convidado.getProfissao();
+				posicaoColuna++;
+				tabelaString[posicaoLinha][posicaoColuna] = convidado.getEmail();
 				posicaoLinha++;
 				posicaoColuna = 0;
 				
@@ -57,7 +59,7 @@ public class TelaIdentificarAlterarConvidado {
 			JButton botaoTelaVoltarConvidado = new JButton("Voltar");
 			painelIdentificarConvidadoAlterar.add(botaoTelaVoltarConvidado);
 			
-			String nomesColunasTelaIdentificarConvidadoAlterar[] = {"NOME","CPF","CONVITE","ENDEREÇO","PROFISSÃO"};
+			String nomesColunasTelaIdentificarConvidadoAlterar[] = {"NOME","CPF","CONVITE","ENDEREÇO","PROFISSÃO","EMAIL"};
 			JTable tabelaConvidadoDelete = new JTable(tabelaString,nomesColunasTelaIdentificarConvidadoAlterar);
 			
 			tabelaConvidadoDelete.setBounds(50, 70, 400, 400);

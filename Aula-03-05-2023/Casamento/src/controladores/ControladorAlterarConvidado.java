@@ -4,17 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Repositorio.RepositorioConvidado;
 import entidades.Convidado;
+import validacao.MensagemErroValidacaoConvidado;
 
 public class ControladorAlterarConvidado implements ActionListener {
 	
 	
 	public ControladorAlterarConvidado(JFrame frameTelaAlterar, JFrame frameMenuPrincipal, Convidado convidadoRecebido,
 			RepositorioConvidado repositorioRecebido, JTextField nomeAntigo, JTextField cpfAntigo,
-			JTextField conviteAntigo, JTextField enderecoAntigo, JTextField profissaoAntigo) {
+			JTextField conviteAntigo, JTextField enderecoAntigo, JTextField profissaoAntigo, JTextField emailAntigo) {
 		
 		this.frameTelaAlterar = frameTelaAlterar;
 		this.frameMenuPrincipal = frameMenuPrincipal;
@@ -25,6 +27,8 @@ public class ControladorAlterarConvidado implements ActionListener {
 		this.conviteAntigo = conviteAntigo;
 		this.enderecoAntigo = enderecoAntigo;
 		this.profissaoAntigo = profissaoAntigo;
+		this.emailAntigo = emailAntigo;
+		
 	}
 
 	JFrame frameTelaAlterar;
@@ -36,14 +40,17 @@ public class ControladorAlterarConvidado implements ActionListener {
 	JTextField conviteAntigo;
 	JTextField enderecoAntigo;
 	JTextField profissaoAntigo;
+	JTextField emailAntigo;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		if(popularConvidado() != null) {
+		
 		RepositorioRecebido.alterarConvidado(convidadoRecebido, popularConvidado());
 		frameTelaAlterar.setVisible(false);
 		frameMenuPrincipal.setVisible(true);
-		
+		}
 	}
 	
 	public Convidado  popularConvidado() {
@@ -55,8 +62,23 @@ public class ControladorAlterarConvidado implements ActionListener {
 		convidadoNovo.setConvite(conviteAntigo.getText());
 		convidadoNovo.setEndereco(enderecoAntigo.getText());
 		convidadoNovo.setProfissao(profissaoAntigo.getText());	
+		convidadoNovo.setEmail(emailAntigo.getText());
 		
-		return convidadoNovo;
+		MensagemErroValidacaoConvidado mensagemErroValidacaoConvidado = new MensagemErroValidacaoConvidado();
+		
+		if(mensagemErroValidacaoConvidado.retornoMensagemErro(convidadoNovo) == null) {
+			
+			JOptionPane.showMessageDialog(null, "Alteração é valida");
+			
+			return convidadoNovo;
+			
+		} else {
+			
+			JOptionPane.showMessageDialog(null, "Alteração invalida");
+			return null;
+			
+		}
+		
 		
 	}
 

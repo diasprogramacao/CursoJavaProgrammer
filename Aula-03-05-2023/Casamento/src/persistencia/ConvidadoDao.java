@@ -16,7 +16,7 @@ public class ConvidadoDao {
 		
 		FabricaConexao fabricaConexao = new FabricaConexao();
 		boolean salvamento;
-		String comandoSqlInsert = "insert into convidados(nome,cpf,convite,endereco,profissao) values (?,?,?,?,?)";
+		String comandoSqlInsert = "insert into convidados(nome,cpf,convite,endereco,profissao,email) values (?,?,?,?,?,?)";
 		Connection conexao = null;
 		PreparedStatement declaracaoComando = null;
 		
@@ -30,6 +30,7 @@ public class ConvidadoDao {
 			declaracaoComando.setString(3, convidado.getConvite());
 			declaracaoComando.setString(4, convidado.getEndereco());
 			declaracaoComando.setString(5, convidado.getProfissao());
+			declaracaoComando.setString(6, convidado.getEmail());
 			
 			declaracaoComando.execute();
 			
@@ -90,6 +91,7 @@ public class ConvidadoDao {
 					convidado.setConvite(resultadoTabela.getString("convite"));
 					convidado.setEndereco(resultadoTabela.getString("endereco"));
 					convidado.setProfissao(resultadoTabela.getString("profissao"));
+					convidado.setEmail(resultadoTabela.getString("email"));
 					
 					listaConvidadoBanco.add(convidado);
 					
@@ -120,8 +122,6 @@ public class ConvidadoDao {
 				declaracaoComando = (PreparedStatement)conexao.prepareStatement(ComandoSql);
 				declaracaoComando.setString(1, cpf);
 				declaracaoComando.execute();
-				
-				JOptionPane.showMessageDialog(null, "Convidado deletado com sucesso");
 			    
 				deletou = true;
 				

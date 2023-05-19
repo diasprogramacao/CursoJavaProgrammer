@@ -21,6 +21,7 @@ public class CadastroConvidado {
 	 String campo03 = "Endereco";
 	 String campo04 = "Profissao";
 	 String campo05 = "Cpf";
+	 String campo06 = "Email";
 	 
 	 JFrame frameTelaCadastroConvidado = new JFrame();
 	 frameTelaCadastroConvidado.setTitle("Cadastro Convidado");
@@ -56,13 +57,18 @@ public class CadastroConvidado {
 	 JTextField  respostaCampo04 = new JTextField(10);
 	 painelTelaCadastroConvidado.add(respostaCampo04);
 	 
+	 JLabel Email = new JLabel(campo06);
+	 painelTelaCadastroConvidado.add(Email);
+	 JTextField  respostaCampo06 = new JTextField(10);
+	 painelTelaCadastroConvidado.add(respostaCampo06);
+	 
 	 JButton botaoTelaCadastroConvidado = new JButton("Registrar");
 	 painelTelaCadastroConvidado.add(botaoTelaCadastroConvidado);
 	 
 	 frameTelaCadastroConvidado.add(painelTelaCadastroConvidado);
 	 frameTelaCadastroConvidado.setVisible(true);
 	 
-	 ControladorTelaCadastroConvidado controladorTelaCadastroConvidado = new ControladorTelaCadastroConvidado(repositorioConvidado,frameTelaMenuPrincipal,frameTelaCadastroConvidado,respostaCampo01,respostaCampo05,respostaCampo02,respostaCampo03,respostaCampo04);
+	 ControladorTelaCadastroConvidado controladorTelaCadastroConvidado = new ControladorTelaCadastroConvidado(repositorioConvidado,frameTelaMenuPrincipal,frameTelaCadastroConvidado,respostaCampo01,respostaCampo05,respostaCampo02,respostaCampo03,respostaCampo04,respostaCampo06);
 	 botaoTelaCadastroConvidado.addActionListener(controladorTelaCadastroConvidado);
 	 
 	}

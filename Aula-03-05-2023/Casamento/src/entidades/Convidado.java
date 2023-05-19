@@ -7,11 +7,13 @@ public class Convidado {
 	private String  Convite;
 	private String  Endereco;
 	private String  Profissao;
+	private String  email;
 	
 	
 	public String getNome() {
 		return Nome;
 	}
+	
 	public void setNome(String nome) {
 		Nome = nome;
 	}
@@ -40,8 +42,12 @@ public class Convidado {
 		Profissao = profissao;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 	
-	
-
 }

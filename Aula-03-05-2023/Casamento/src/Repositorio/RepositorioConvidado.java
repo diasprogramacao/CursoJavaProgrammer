@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entidades.Convidado;
+import manipularArquivo.LogCrudConvidado;
 import persistencia.ConvidadoDao;
 
 
@@ -47,12 +48,18 @@ public class RepositorioConvidado implements InterfaceConvidado{
 	@Override
 	public boolean deletarConvidado(Convidado convidado) {
 		
+		LogCrudConvidado logCrudConvidado = new LogCrudConvidado();
+		logCrudConvidado.escreverNoArquivoLogJogador(convidado, "Deletar");
+		
 		return convidadoDao.deletarConvidadoBancoDadosPeloCpf(convidado.getCpf());
 		
 	}
 
 	@Override
 	public void alterarConvidado(Convidado convidadoAntigo, Convidado convidadoNovo) {
+		
+		LogCrudConvidado logCrudConvidado = new LogCrudConvidado();
+		logCrudConvidado.escreverNoArquivoLogJogador(convidadoAntigo, "Alterar");
 		
 		convidadoDao.alterarJogador(convidadoNovo);
 		

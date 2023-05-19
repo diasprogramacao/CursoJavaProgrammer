@@ -20,13 +20,13 @@ public class FabricaConexao {
 			 Class.forName("com.mysql.cj.jdbc.Driver");
 			 conexao = DriverManager.getConnection(BANCO_URL,USUARIO,USUARIO);
 			 
-			 System.out.println("deu certo");
+			 System.out.println("Aplicação se comunicando com banco de dados");
 			 
 		 } catch (Exception MensagemErro) {
 			 
 			 conexao = null;
 			 System.out.println(MensagemErro);
-			 System.out.println("Deu errado");
+			 System.out.println("Aplicação não está conseguindo se conectar com o banco dados.(Analisar Pacote persistencia - Classe FabricaConexão.)");
 			 
              }
 		 

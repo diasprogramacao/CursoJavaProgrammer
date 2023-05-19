@@ -17,7 +17,7 @@ public class TelaListaConvidado {
 		
 		int quantidadeLinhas = listaConvidado.size();
 		
-		String [][] tabelaString = new String [quantidadeLinhas][5];
+		String [][] tabelaString = new String [quantidadeLinhas][6];
 		
 		int posicaoLinha = 0;
 		int posicaoColuna = 0;
@@ -33,6 +33,8 @@ public class TelaListaConvidado {
 			tabelaString [posicaoLinha] [posicaoColuna] = convidado.getEndereco();
 			posicaoColuna++;
 			tabelaString [posicaoLinha] [posicaoColuna] = convidado.getProfissao();
+			posicaoColuna++;
+			tabelaString [posicaoLinha] [posicaoColuna] = convidado.getEmail();
 			posicaoLinha++;
 			posicaoColuna=0;
 			
@@ -42,9 +44,9 @@ public class TelaListaConvidado {
 		JFrame frameTelaListaConvidado = new JFrame();
 		frameTelaListaConvidado.setSize(500,600);
 		
-		String nomeColunas[]= {"NOME","CPF","CONVITE","ENDEREÇO","PROFISSÃO"};
+		String nomeColunas[]= {"NOME","CPF","CONVITE","ENDEREÇO","PROFISSÃO","EMAIL"};
 		JTable TabelaConvidado = new JTable(tabelaString,nomeColunas);
-		TabelaConvidado.setBounds(50, 70, 400, 400);
+		TabelaConvidado.setBounds(30, 40, 300, 300);
 		JScrollPane scrollPaneListarJogador = new JScrollPane(TabelaConvidado);
 		
 		JPanel painelTelaListaConvidado = new JPanel();

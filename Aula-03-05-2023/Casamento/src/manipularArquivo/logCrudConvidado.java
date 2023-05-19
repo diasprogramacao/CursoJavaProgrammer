@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import entidades.Convidado;
 import persistencia.LogConvidadoDao;
 
-public class logCrudConvidado {
+public class LogCrudConvidado {
 	
 	public void escreverNoArquivoLogJogador(Convidado convidado, String tipoOperacao) {
 		
@@ -17,18 +17,18 @@ public class logCrudConvidado {
 		
 		LocalDateTime horaAtual = LocalDateTime.now();
 		
-		String enderecoArquivo = "D:\\RepositorioGit\\JavaProgrammerMarco\\Aula-03-05-23\\cadastroJogador\\log\\logJogador.txt";
+		String enderecoArquivo = "C:\\RepositorioGitHub\\MeuRepositorio\\CursoJavaProgrammer\\Aula-03-05-2023\\log\\logConvidado";
 		String escrita = "";
 		switch (tipoOperacao) {
 		
 		case  "Deletar":
-			escrita = horaAtual + "O jogador(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + "foi excluido!";
+			escrita = horaAtual + "O Convidado(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + "foi excluido!";
 			break;
 		case  "Alterar":
-			escrita = horaAtual + " - O jogador(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + " foi alterado!";
+			escrita = horaAtual + " - O Convidado(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + " foi alterado!";
 			break;
 		case  "Cadastrar":
-			escrita = horaAtual + " - O jogador(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + " foi cadastrado!" ;
+			escrita = horaAtual + " - O Convidado(a) " + convidado.getNome() + " com Cpf: "+ convidado.getCpf() + " foi cadastrado!" ;
 			break;
 		
 		}

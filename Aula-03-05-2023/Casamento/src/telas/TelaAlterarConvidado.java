@@ -30,6 +30,7 @@ public class TelaAlterarConvidado {
 		 String campo03 = "Endereco";
 		 String campo04 = "Profissao";
 		 String campo05 = "Cpf";
+		 String campo06 = "Email";
 		 
 		 convidadoRecebido = convidado;
 		 
@@ -52,6 +53,7 @@ public class TelaAlterarConvidado {
 		 painelTelaAlterarConvidado.add(cpf);
 		 JTextField  respostaCampo02 = new JTextField(10);
 		 respostaCampo02.setText(convidadoRecebido.getCpf());
+		 respostaCampo02.setEditable(false);
 		 painelTelaAlterarConvidado.add(respostaCampo02);
 		 
 		 JLabel convite = new JLabel(campo02);
@@ -72,6 +74,12 @@ public class TelaAlterarConvidado {
 		 respostaCampo05.setText(convidadoRecebido.getProfissao());
 		 painelTelaAlterarConvidado.add(respostaCampo05);
 		 
+		 JLabel email = new JLabel(campo06);
+		 painelTelaAlterarConvidado.add(email);
+		 JTextField  respostaCampo06 = new JTextField(10);
+		 respostaCampo06.setText(convidadoRecebido.getEmail());
+		 painelTelaAlterarConvidado.add(respostaCampo06);
+		 
 		 JButton botaoAlterar = new JButton("Alterar");
 		 painelTelaAlterarConvidado.add(botaoAlterar);
 		 JButton botaoVoltar  = new JButton();
@@ -81,7 +89,7 @@ public class TelaAlterarConvidado {
 		 frameTelaAlterarConvidado.setVisible(true);
 		
 		 ControladorAlterarConvidado ControladorAlterarConvidado =  new ControladorAlterarConvidado(frameTelaAlterarConvidado,JframeMenuPrincipal,convidado,repositorioConvidado,respostaCampo01,respostaCampo02,
-				 respostaCampo03,respostaCampo04,respostaCampo05);
+				 respostaCampo03,respostaCampo04,respostaCampo05,respostaCampo06);
 		 
 		 botaoAlterar.addActionListener(ControladorAlterarConvidado);
 		 botaoVoltar.addActionListener(ControladorAlterarConvidado);
